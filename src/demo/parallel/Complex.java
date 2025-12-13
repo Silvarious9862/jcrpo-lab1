@@ -84,6 +84,22 @@ public class Complex {
         im = imag;
         return this;
     }
+    /**
+     * Вычитание комплексных чисел.
+     */
+    public Complex minus(Complex b) {
+        return new Complex(re - b.re, im - b.im);
+    }
+
+    /**
+     * Деление комплексных чисел.
+     */
+    public Complex divide(Complex b) {
+        double denominator = b.re * b.re + b.im * b.im;
+        double real = (re * b.re + im * b.im) / denominator;
+        double imag = (im * b.re - re * b.im) / denominator;
+        return new Complex(real, imag);
+    }
 
     /**
      * Square of Complex object's length, we're using square of length to 
